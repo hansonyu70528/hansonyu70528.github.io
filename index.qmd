@@ -1,6 +1,6 @@
 ---
-title: "Exposition"
-subtitle: "Expository notes, handouts, and short articles."
+title: "Research Blog"
+subtitle: "Expository notes and handouts."
 listing:
   contents: posts
   sort: "date desc"
