@@ -1,0 +1,47 @@
+# Builds the site and publishes it to GitHub Pages on every push to main.
+# One-time setup: Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true   # LaTeX, for posts with a PDF version
+          # If a Quarto update ever breaks the build, pin the version from the
+          # last successful run (shown in its log) by uncommenting this line:
+          # version: X.Y.Z
+
+      - name: Render
+        run: quarto render
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

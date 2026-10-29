@@ -1,0 +1,24 @@
+<!--
+Shared LaTeX macros, included at the top of every post.
+
+Pandoc expands these inside math before MathJax or LaTeX sees it, so they
+behave the same on the web page and in the PDF. They use \providecommand
+rather than \newcommand so that a name LaTeX already defines (like \P or \S)
+doesn't stop the PDF from building; your definition still wins inside math.
+-->
+
+\providecommand{\F}{\mathbb{F}}
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\C}{\mathbb{C}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\Q}{\mathbb{Q}}
+\providecommand{\E}{\mathbb{E}}
+\providecommand{\P}{\mathbb{P}}
+\providecommand{\eps}{\varepsilon}
+\providecommand{\abs}[1]{\left|#1\right|}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\set}[1]{\left\{#1\right\}}
+\providecommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\providecommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\providecommand{\poly}{\operatorname{poly}}

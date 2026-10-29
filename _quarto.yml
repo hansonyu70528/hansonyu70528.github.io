@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Hung-Hsun Hans Yu"
+  description: "Mathematical exposition by Hung-Hsun Hans Yu."
+  # Replace YOUR-USERNAME with your GitHub username (or your own domain later).
+  # The RSS feed and link previews use this address.
+  site-url: "https://hansonyu70528.github.io"
+  open-graph: true
+  navbar:
+    right:
+      - text: "About"
+        href: "https://sites.google.com/view/hunghsun-hans-yu/home"
+      - icon: rss
+        href: index.xml
+        aria-label: "RSS feed"
+  page-footer:
+    left: "© Hung-Hsun Hans Yu"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme/light.scss, theme/common.scss]
+      dark: [darkly, theme/dark.scss, theme/common.scss]
+    html-math-method: mathjax
+    toc: true
+    toc-depth: 2
+    grid:
+      body-width: 720px

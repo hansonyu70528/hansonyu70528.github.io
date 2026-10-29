@@ -1,0 +1,4 @@
+# Defaults applied to every post in this folder.
+author: "Hung-Hsun Hans Yu"
+toc: true
+title-block-banner: false

@@ -1,0 +1,14 @@
+---
+title: "Exposition"
+subtitle: "Expository notes, handouts, and short articles."
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+  categories: true
+  date-format: "MMMM D, YYYY"
+  feed: true
+toc: false
+title-block-banner: false
+---

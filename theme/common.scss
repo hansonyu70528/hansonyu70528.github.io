@@ -1,0 +1,47 @@
+/*-- scss:defaults --*/
+// Charter is the text face of many math papers (via XCharter) and sits well
+// next to MathJax's Computer Modern. It ships with macOS; the fallbacks cover
+// Windows and Linux. No web fonts, so nothing external can break.
+$font-family-sans-serif: Charter, "Bitstream Charter", XCharter, "Sitka Text", Cambria, Georgia, serif;
+$font-size-base: 1.0625rem;
+$line-height-base: 1.6;
+$headings-font-weight: 600;
+
+/*-- scss:rules --*/
+.navbar {
+  border-bottom: 1px solid $chrome-rule;
+}
+
+// Theorem, lemma, corollary, proposition, conjecture: upright title, italic
+// statement (amsthm's plain style), and a thin rule so statements are easy
+// to find when skimming. Matched by label prefix, e.g. {#thm-main}.
+div[id^="thm-"],
+div[id^="lem-"],
+div[id^="cor-"],
+div[id^="prp-"],
+div[id^="cnj-"] {
+  font-style: italic;
+  border-left: 2px solid $theorem-rule;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+
+  .theorem-title {
+    font-style: normal;
+  }
+}
+
+// Definitions, examples, exercises: same rule, upright text.
+div[id^="def-"],
+div[id^="exm-"],
+div[id^="exr-"] {
+  border-left: 2px solid $theorem-rule;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+// End-of-proof mark. If a future Quarto version adds its own, delete this.
+.proof > p:last-child::after {
+  content: "\220E";
+  float: right;
+  padding-left: 0.5em;
+}
