@@ -1,0 +1,13 @@
+---
+title: "The Szemerédi–Trotter theorem over finite fields"
+description: "Expository notes on recent proofs and a strengthening."
+date: 2026-10-28
+categories: [incidence geometry]
+---
+
+{{< include /_macros.qmd >}}
+
+
+The celebrated Szemerédi–Trotter theorem was recently extended to finite fields with an extra correction term by Lewko and independently Miao and Xie. The notes give an exposition to both proofs and also provide a strengthening that is tight for algebraically closed fields.
+
+[Read the notes (PDF)](szemeredi-trotter.pdf)
